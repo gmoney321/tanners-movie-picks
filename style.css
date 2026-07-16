@@ -33,7 +33,7 @@ p {
     border-width: 0.5px;
     border-color: white;
     padding: 5px;
-    width: 100vw;
+    width: 100%;
     box-sizing: border-box;
     height: 260px;
     margin-bottom: 5px;
