@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(rgb(30, 30, 30), rgb(12, 12, 12));
+    background: linear-gradient(rgb(35, 35, 35), rgb(10, 10, 10));
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -14,7 +14,15 @@ h1 {
 p {
     color: rgb(210, 210, 210);
     font-family: "Inter", sans-serif;
+  
+}
+
+.movie-card{
     border-top-style: solid;
     border-width: 0.5px;
+    border-color: white;
     padding: 5px;
+    width: 100vw;
+    height: 250px;
+    margin-bottom: 5px;
 }
