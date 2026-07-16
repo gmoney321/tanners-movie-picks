@@ -1,5 +1,7 @@
 body {
-    background-color: rgb(25, 25, 25);
+    background: linear-gradient(rgb(30, 30, 30), rgb(12, 12, 12));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 h1 {
