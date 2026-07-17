@@ -58,3 +58,7 @@ p {
     row-gap: 0px;
     flex-wrap: wrap;
 }
+
+select:hover {
+    cursor: pointer;
+}
