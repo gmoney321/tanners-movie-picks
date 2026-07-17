@@ -1,38 +1,47 @@
-// 1. This global variable will hold our player object
 let player;
 
-// 2. Load the YouTube Iframe API asynchronously
+// 1. Load the YouTube Iframe API
 const tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 const firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-// 3. This function runs automatically once the YouTube API is ready
+// 2. Triggered when API is ready
 function onYouTubeIframeAPIReady() {
+    console.log("YouTube API Ready.");
     player = new YT.Player('youtube-audio-player', {
         height: '0',
         width: '0',
-        videoId: 'vFHBOKa_ZG0', // YouTube ID for "Take Me Back to Eden"
+        videoId: 'f_bH7HpxVf8', // Sleep Token ID
         playerVars: {
             'playsinline': 1,
-            'controls': 0,     // Hide YouTube video controls
-            'disablekb': 1    // Disable keyboard shortcuts
+            'controls': 0,
+            'disablekb': 1
         },
         events: {
-            'onReady': onPlayerReady
+            'onReady': onPlayerReady,
+            'onError': onPlayerError // Added to catch hidden blocks
         }
     });
 }
 
-// 4. Once the player is fully loaded in the background, activate the button
 function onPlayerReady(event) {
+    console.log("Player is loaded and ready.");
     const enterBtn = document.getElementById('enter-btn');
     
+    if (!enterBtn) {
+        console.error("Could not find an element with id='enter-btn'!");
+        return;
+    }
+
     enterBtn.addEventListener('click', () => {
-        // Start playing the music!
+        console.log("Button clicked. Attempting to play track...");
         player.playVideo();
-        
-        // Optional: Hide the button or transition to your main content here
         enterBtn.style.display = 'none'; 
     });
+}
+
+function onPlayerError(event) {
+    console.error("YouTube Player Error Code:", event.data);
+    alert("YouTube blocked embedding for this specific video layout.");
 }
