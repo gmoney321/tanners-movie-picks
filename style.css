@@ -59,6 +59,16 @@ p {
     flex-wrap: wrap;
 }
 
+.title-row h2, .title-row p {
+    margin: 1px;
+}
+
 select:hover {
     cursor: pointer;
+}
+
+.movie-card .rating {
+    color: green !important;
+    font-size: 22px;
+    font-weight: bold;
 }
