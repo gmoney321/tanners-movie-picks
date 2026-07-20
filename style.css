@@ -5,6 +5,21 @@ body {
     margin: 0px;
 }
 
+#bg-video {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    object-fit: cover;
+}
+
+#enter-btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
 h1 {
     text-align: center;
     color: white;
